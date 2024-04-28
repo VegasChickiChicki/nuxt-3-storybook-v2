@@ -1,7 +1,28 @@
 <template>
   <h1> Welcome Nuxt to Storybook  </h1>
-  <NuxtWelcome />
+
+  <br>
+  <br>
+  <br>
+
+  <span>
+    nuxtApp = {{ $config }}
+  </span>
+
+  <br>
+  <br>
+  <br>
+
+  <span>
+    injected api plugin = {{ data }}
+  </span>
 </template>
+
+<script setup>
+const { $config, $api } = useNuxtApp()
+
+const data = $api.get()
+</script>
 
 <style>
 .readmore {
